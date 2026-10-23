@@ -1,0 +1,15 @@
+# TxDOT data and outputs stay out of the repo (download them from TxDOT)
+*.zip
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.gpkg
+*.parquet
+direction_output/
+_input/
+__pycache__/
+.pytest_cache/

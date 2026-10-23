@@ -1,0 +1,13 @@
+name: txdot-direction
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - geopandas>=0.14
+  - pyogrio>=0.7
+  - pyshp>=2.3
+  - pyproj>=3.6
+  - shapely>=2.0
+  - numpy
+  - pyarrow
+  - pytest

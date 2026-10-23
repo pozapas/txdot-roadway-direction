@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15">
+  <defs>
+    <marker id="xg" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="22" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7b68ee"/>
+    </marker>
+    <marker id="lg" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="22" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8562a"/>
+    </marker>
+    <marker id="rg" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="22" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f7fe0"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="22" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#159a6b"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect width="900" height="470" fill="#ffffff"/>
+
+  <!-- increasing DFO -->
+  <text x="40" y="38" font-weight="600" fill="#222">How TxDOT draws every line: from low DFO to high DFO</text>
+  <line x1="40" y1="60" x2="840" y2="60" stroke="#444" stroke-width="2" marker-end="url(#g)"/>
+  <text x="40" y="84" fill="#444">DFO 10.0</text>
+  <text x="840" y="84" fill="#444" text-anchor="end">DFO 12.0</text>
+
+  <!-- XG left frontage -->
+  <line x1="40" y1="130" x2="840" y2="130" stroke="#7b68ee" stroke-width="5"/>
+  <line x1="520" y1="130" x2="380" y2="130" stroke="#7b68ee" stroke-width="5" marker-end="url(#xg)"/>
+  <text x="850" y="135" fill="#7b68ee" font-weight="600">XG</text>
+  <!-- LG -->
+  <line x1="40" y1="180" x2="840" y2="180" stroke="#e8562a" stroke-width="7"/>
+  <line x1="520" y1="180" x2="380" y2="180" stroke="#e8562a" stroke-width="7" marker-end="url(#lg)"/>
+  <text x="850" y="185" fill="#e8562a" font-weight="600">LG</text>
+  <!-- KG -->
+  <line x1="40" y1="230" x2="840" y2="230" stroke="#999" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="850" y="235" fill="#777" font-weight="600">KG</text>
+  <text x="440" y="222" fill="#777" text-anchor="middle" font-size="13">KG = reference centerline (no traffic; dropped where LG and RG exist)</text>
+  <!-- RG -->
+  <line x1="40" y1="280" x2="840" y2="280" stroke="#1f7fe0" stroke-width="7"/>
+  <line x1="380" y1="280" x2="520" y2="280" stroke="#1f7fe0" stroke-width="7" marker-end="url(#rg)"/>
+  <text x="850" y="285" fill="#1f7fe0" font-weight="600">RG</text>
+  <!-- AG right frontage -->
+  <line x1="40" y1="330" x2="840" y2="330" stroke="#159a6b" stroke-width="5"/>
+  <line x1="380" y1="330" x2="520" y2="330" stroke="#159a6b" stroke-width="5" marker-end="url(#ag)"/>
+  <text x="850" y="335" fill="#159a6b" font-weight="600">AG</text>
+
+  <!-- side labels -->
+  <text x="40" y="160" fill="#222">LEFT side of the drawn direction: traffic moves toward decreasing DFO  →  DFO_DIR = DEC</text>
+  <text x="40" y="312" fill="#222">RIGHT side of the drawn direction: traffic moves toward increasing DFO  →  DFO_DIR = INC</text>
+
+  <!-- formulas -->
+  <rect x="40" y="365" width="800" height="88" rx="8" fill="#f4f6f8" stroke="#d0d7de"/>
+  <text x="60" y="393" fill="#222">θ = bearing of the line as drawn (first vertex → last vertex), 0° = north, 90° = east</text>
+  <text x="60" y="418" fill="#1f7fe0">Right roadbeds (RG, SG, TG, UG, VG, AG, BG):  travel bearing β = θ</text>
+  <text x="60" y="443" fill="#e8562a">Left roadbeds (LG, MG, PG, NG, OG, XG, YG):  travel bearing β = (θ + 180°) mod 360°</text>
+</svg>
