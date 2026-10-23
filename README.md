@@ -171,10 +171,10 @@ With $\varphi$ = latitude and $\lambda$ = longitude in degrees, a simple version
 $$
 \Delta x = (\lambda_n - \lambda_0)\cos\varphi_0, \qquad
 \Delta y = \varphi_n - \varphi_0, \qquad
-\theta = \operatorname{atan2}(\Delta x,\ \Delta y) \bmod 360^\circ
+\theta = \mathrm{atan2}(\Delta x,\ \Delta y) \bmod 360^\circ
 $$
 
-The $\cos\varphi$ factor corrects for lines of longitude getting closer together away from the equator. Note that $\operatorname{atan2}$ takes the east component first, so the angle starts at north and turns clockwise. The code uses the exact version on the WGS 84 ellipsoid (`pyproj.Geod.inv`, which follows Karney 2013); for a road segment the two differ by a small fraction of a degree.
+The $\cos\varphi$ factor corrects for lines of longitude getting closer together away from the equator. Note that $\mathrm{atan2}$ takes the east component first, so the angle starts at north and turns clockwise. The code uses the exact version on the WGS 84 ellipsoid (`pyproj.Geod.inv`, which follows Karney 2013); for a road segment the two differ by a small fraction of a degree.
 
 ### Step 3: turn the drawn bearing into a travel bearing
 
@@ -230,7 +230,7 @@ Take a right-roadbed line drawn from (30.0000° N, 97.7400° W) to (30.0100° N,
 |---|---|---|
 | Step 1: DFO order | already low to high | already low to high |
 | Step 2: $\Delta x$, $\Delta y$ | $0.01 \times \cos 30^\circ = 0.00866$, $0.01$ | same |
-| Step 2: drawn bearing $\theta$ | $\operatorname{atan2}(0.00866, 0.01) = 40.9^\circ$ | $40.9^\circ$ |
+| Step 2: drawn bearing $\theta$ | $\mathrm{atan2}(0.00866, 0.01) = 40.9^\circ$ | $40.9^\circ$ |
 | Step 3: travel bearing $\beta$ | $40.9^\circ$ (`INC`) | $(40.9 + 180) \bmod 360 = 220.9^\circ$ (`DEC`) |
 | Step 4: 8-point | $\lfloor 63.4 / 45 \rfloor = 1$ → **NE** | $\lfloor 243.4 / 45 \rfloor = 5$ → **SW** |
 | Step 4: 4-point | $\lfloor 85.9 / 90 \rfloor = 0$ → **N** | $\lfloor 265.9 / 90 \rfloor = 2$ → **S** |
